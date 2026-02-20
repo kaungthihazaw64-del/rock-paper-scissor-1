@@ -78,10 +78,19 @@ input.onButtonPressed(Button.B, function () {
         . . . . .
         `)
 })
-let score_2 = 0
-let Score_1 = 0
 let Number2 = 0
 Number2 = 0
+let score_2 = 0
+let Score_1 = 0
 basic.forever(function () {
-	
+    if (Score_1 == 3) {
+        basic.showString("You Win!")
+        radio.sendString("You Lose!")
+        game.gameOver()
+    }
+    if (score_2 == 3) {
+        basic.showString("You Lose!")
+        radio.sendString("You Win!")
+        game.gameOver()
+    }
 })
